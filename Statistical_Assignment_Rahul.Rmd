@@ -60,7 +60,7 @@ if (!dir.exists(output_plot_dir_task3)) {
 }
 
 # Define dataset path
-dataset_path <- "D:/MSCxAsign/stats/dataset.csv" # Placeholder, user must change
+dataset_path <- "D:/MSCxAsign/250163_assignment/dataset.csv" # Placeholder, user must change
 data <- read.csv(dataset_path,
                  stringsAsFactors = FALSE,
                  header = TRUE)
@@ -454,16 +454,12 @@ datatable(
   ),
   class = 'stripe hover'
 )
-
-
 ```
 ## 3. Compute the log-likelihood function
 ```{r task2_3_loglik_single_table, message=FALSE, warning=FALSE}
 library(DT)
-
 # 1) Compute σ̂² and log‐likelihood for each model
 n_obs <- nrow(data_normalized)
-
 stats_df <- data.frame(
   Model = model_names,
   SigmaSqHat = sapply(model_names, function(m) {
@@ -482,7 +478,6 @@ stats_df <- data.frame(
   }),
   stringsAsFactors = FALSE
 )
-
 # 2) Render as a single, non‐paginated, aligned DT table
 datatable(
   stats_df,
@@ -503,7 +498,6 @@ datatable(
   ),
   class = 'stripe hover'
 )
-
 ```
 ## 4. Compute AIC and BIC
 ```{r task2_4_aic_bic_table, message=FALSE, warning=FALSE}
@@ -650,7 +644,6 @@ cat("Based on lowest AIC & BIC and the residuals closest to normal, we select",
     suggested_best_model, "as the best model.\n")
 
 ```
-
 
 ## 7. Train/Test Split, Parameter Estimation, Predictions & 95% Confidence Intervals
 ```{r task2_7_train_test_ci, message=FALSE, warning=FALSE, fig.width=12, fig.height=6}
@@ -924,7 +917,3 @@ sessionInfo()
 ```
 ```
 #End of Assignment.
-
-
-
-
